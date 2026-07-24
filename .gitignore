@@ -1,0 +1,23 @@
+# R
+*.RData
+*.Rds
+*.rds
+*.Rhistory
+
+# Data files
+*.csv
+*.tsv
+*.txt.gz
+*.mtx.gz
+*.CEL.gz
+*.CEL
+
+# Output
+output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.Rproj.user
