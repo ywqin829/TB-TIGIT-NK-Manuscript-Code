@@ -40,7 +40,7 @@ library(GOplot)
 library(RColorBrewer)
 library(gplots)
 
-source("../utils/go_kegg.R")
+source("utils/go_kegg.R")
 
 OUT_DIR <- "./output"
 DATA_DIR <- "./data"

@@ -22,11 +22,14 @@ library(ggrepel)
 library(dplyr)
 
 # ---- Input files -----------------------------------------------------
+# H3K27ac ChIP-seq data: ENCODE primary human NK cells
+# Peaks: ENCFF119TOL (pseudoreplicated peaks, GRCh38)
+# bigWig: ENCODE ENCFF997ZAW (fold-change over control, GRCh38)
 
 peak_file <- file.path(DATA_DIR,
-  "GSM6727286_Ishikawa_8hrDMSO_H3K27Ac_rep1_stringent_peaks.narrowPeak.gz")
+  "ENCFF119TOL_pseudoreplicated_peaks_GRCh38.bed")
 bw_file   <- file.path(DATA_DIR,
-  "GSM6727286_Ishikawa_8hrDMSO_H3K27Ac_rep1_stringent.bw")
+  "ENCFF997ZAW_fold_change_over_control_GRCh38.bigWig")
 tss_file  <- file.path(DATA_DIR, "hg38_refseq_tss.txt")
 
 # ======================================================================

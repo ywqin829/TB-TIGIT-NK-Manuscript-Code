@@ -9,7 +9,7 @@ library(ggpubr)
 library(pheatmap)
 library(patchwork)
 
-source("../utils/scRNA-seq.R")
+source("utils/scRNA-seq.R")
 
 set.seed(42)
 
@@ -48,7 +48,7 @@ theme_my <- theme_classic() +
 # ============================================================
 # GENE LISTS
 # ============================================================
-gly_keep <- c("SLC2A1", "HK2", "PFKFB3", "PKM", "ENO1", "GAPDH", "LDHA")
+gly_keep <- c("SLC2A1", "HK2", "PFKFB3", "PKM", "ENO1", "LDHA")
 lac_keep <- c("LDHA", "SLC16A1", "SLC16A3", "HIF1A")
 oxp_keep <- c("COX5A", "NDUFA1", "NDUFS1", "NDUFS3", "NDUFV1", "TFAM")
 all_keep <- unique(c(gly_keep, lac_keep, oxp_keep))

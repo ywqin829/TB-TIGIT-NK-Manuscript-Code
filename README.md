@@ -11,7 +11,7 @@ Code repository for: **"Restoring NK Cell Effector Function through TIGIT Blocka
 │   ├── NK_metabolic_final.R            # NK metabolic gene timecourse (glycolysis/lactate/OXPHOS)
 │   └── exhaustion_heatmap.R            # Parameterized TIGIT Low/High metabolic pathway heatmaps (4 sets)
 ├── bulkRNA-seq/                        # Bulk RNA-seq analysis
-│   ├── α-TIGIT-修改.R                  # DEG (limma-voom), GO/KEGG, GSEA, CIBERSORT, pathway heatmaps
+│   ├── α-TIGIT-修改.R                  # DEG (limma-voom), GSEA
 │   ├── GSVA_1.R                        # GSVA pathway enrichment (KEGG + GO)
 │   ├── WGCNA.R                         # Weighted gene co-expression network analysis
 │   ├── ROSE.R                          # ROSE super-enhancer calling from H3K27ac ChIP-seq
@@ -34,9 +34,9 @@ Code repository for: **"Restoring NK Cell Effector Function through TIGIT Blocka
 | **Fig 1C** | TIGIT expression in NK cells across UT/3h/24h | `scRNA-seq/NK_full_analysis.R` Part 1 |
 | **Fig 3B** | GSVA GO heatmap (adj.P.Val < 0.05, |LogFC| > 1.0) | `bulkRNA-seq/GSVA_1.R` Parts 3–4 |
 | **Fig 3C** | DEG volcano (cell migration & metabolism) | `bulkRNA-seq/α-TIGIT-修改.R` Part 2 |
-| **Fig 3D** | GSEA (PI3K-AKT, mTOR, chemotaxis, cytotoxicity) | `bulkRNA-seq/α-TIGIT-修改.R` Part 4 |
+| **Fig 3D** | GSEA (PI3K-AKT, mTOR, chemotaxis, cytotoxicity) | `bulkRNA-seq/α-TIGIT-修改.R` Part 3 |
 | **Fig 5A** | Global z-score heatmap: mitochondrial energy + redox (TIGIT Low vs High, 3h + 24h) | `scRNA-seq/exhaustion_heatmap.R` (set: `mito_energy_redox`) |
-| **Fig 5B** | GSEA: OXPHOS, mitochondrial pathways | `bulkRNA-seq/α-TIGIT-修改.R` Part 4 |
+| **Fig 5B** | GSEA: OXPHOS, mitochondrial pathways | `bulkRNA-seq/α-TIGIT-修改.R` Part 3 |
 | **Fig 6A** | Volcano plot: 28 differential metabolites (VIP > 1, P < 0.05) | `metabolomics/TIGIT代谢组学测序分析.R` Part 3 |
 | **Fig 6B** | KEGG enrichment of differential metabolites (MSEA, FDR < 0.05) | `metabolomics/TIGIT代谢组学测序分析.R` Part 6 |
 | **Fig 6C** | scRNA-seq z-score heatmap: metabolomics-validated pathways (TIGIT Low vs High, 3h + 24h) | `scRNA-seq/exhaustion_heatmap.R` (set: `metabolomics`) |
@@ -53,7 +53,6 @@ Code repository for: **"Restoring NK Cell Effector Function through TIGIT Blocka
 |---|---|---|
 | **Supp 3A** | DotPlot: effector genes in TIGIT Low vs High NK (n=800/group) | `scRNA-seq/NK_full_analysis.R` Parts 3–4 |
 | **Supp 4** | WGCNA: module-trait heatmap, MM-GS scatter, GO/KEGG enrichment, GSEA | `bulkRNA-seq/WGCNA.R` |
-| **Supp 4** | DEG GO/KEGG enrichment (clusterProfiler dotplot/barplot/cnet) | `bulkRNA-seq/α-TIGIT-修改.R` Part 3 |
 
 > **Note**: Figures 2, 4, 5C–Q, 6F–N, 7C–O, 8B–P, 9, Supp 1–2, Supp 3B–C, Supp 5–8 contain wet-lab experimental data (flow cytometry, qPCR, western blot, confocal microscopy, CFU assays) and do not have corresponding computational code in this repository.
 
@@ -66,7 +65,6 @@ All scripts expect input data in a `./data/` subdirectory and write outputs to `
 | 1M-scBloodNL MTB PBMC scRNA-seq | EGA: EGAS00001005376 |
 | GSE192483 (Lung TB scRNA-seq) | GEO |
 | GSE227691 (Healthy lung scRNA-seq) | GEO |
-| GSE6727286 (Ishikawa H3K27ac ChIP-seq) | GEO |
 | ENCFF119TOL (Primary NK H3K27ac ChIP-seq) | ENCODE |
 | 114 metabolic pathway gene sets | `114条代谢通路基因.xlsx` (included in data directory) |
 | Bulk RNA-seq (NK-92 anti-TIGIT vs IgG) | Contact corresponding author |
@@ -78,7 +76,6 @@ Expensive one-time computations (QC clustering, DE, WGCNA network construction) 
 
 ### R scripts
 ```r
-# Individual scripts (run from their respective directories):
 source("scRNA-seq/NK_full_analysis.R")
 source("bulkRNA-seq/WGCNA.R")
 source("metabolomics/TIGIT代谢组学测序分析.R")

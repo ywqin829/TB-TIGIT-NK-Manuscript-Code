@@ -20,7 +20,7 @@ library(readxl)
 library(dplyr)
 library(pheatmap)
 
-source("../utils/scRNA-seq.R")
+source("utils/scRNA-seq.R")
 
 OUT_DIR <- "./output"
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)

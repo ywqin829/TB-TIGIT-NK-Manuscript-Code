@@ -33,7 +33,7 @@ library(ggpubr)
 library(patchwork)
 library(gghalves)
 
-source("../utils/scRNA-seq.R")
+source("utils/scRNA-seq.R")
 
 # Output and data directories
 OUT_DIR <- "./output"
